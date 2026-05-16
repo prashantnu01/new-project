@@ -19,155 +19,254 @@
           },
           fontFamily: {
             sans: ['system-ui', '-apple-system', 'sans-serif'],
-          }
+          },
+          keyframes: {
+            'fade-up': {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            'fade-in': {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            'slide-right': {
+              '0%': { opacity: '0', transform: 'translateX(-30px)' },
+              '100%': { opacity: '1', transform: 'translateX(0)' },
+            },
+            'glow-pulse': {
+              '0%, 100%': { opacity: '0.4' },
+              '50%': { opacity: '0.8' },
+            },
+            'float': {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            'logo-scroll': {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            'shimmer': {
+              '0%': { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' },
+            },
+          },
+          animation: {
+            'fade-up': 'fade-up 0.8s ease-out forwards',
+            'fade-up-delay': 'fade-up 0.8s ease-out 0.2s forwards',
+            'fade-up-delay2': 'fade-up 0.8s ease-out 0.4s forwards',
+            'fade-in': 'fade-in 1s ease-out forwards',
+            'slide-right': 'slide-right 0.8s ease-out forwards',
+            'glow-pulse': 'glow-pulse 3s ease-in-out infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'logo-scroll': 'logo-scroll 20s linear infinite',
+            'shimmer': 'shimmer 3s ease-in-out infinite',
+          },
         }
       }
     }
   </script>
   <style>
-    body { font-family: system-ui, -apple-system, sans-serif; }
+    body { font-family: system-ui, -apple-system, sans-serif; overflow-x: hidden; }
+    .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+    .card-hover { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(124, 58, 237, 0.15); }
+    .glow-border { position: relative; }
+    .glow-border::before { content: ''; position: absolute; inset: -1px; border-radius: inherit; background: linear-gradient(135deg, #7c3aed, #8ee7ff, #d200b5, #7c3aed); opacity: 0; transition: opacity 0.4s; z-index: -1; }
+    .glow-border:hover::before { opacity: 1; }
+    .text-gradient { background: linear-gradient(135deg, #7c3aed, #8ee7ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .bg-shimmer { background: linear-gradient(90deg, transparent, rgba(124,58,237,0.08), transparent); background-size: 200% 100%; animation: shimmer 3s ease-in-out infinite; }
+    .hero-glow { position: absolute; width: 500px; height: 500px; border-radius: 50%; filter: blur(120px); opacity: 0.3; animation: glow-pulse 4s ease-in-out infinite; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #7c3aed; transition: width 0.3s; }
+    .nav-link:hover::after { width: 100%; }
+    .partner-item { transition: all 0.3s; }
+    .partner-item:hover { color: #8ee7ff !important; transform: scale(1.08); }
+    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(124,58,237,0.3), transparent); }
+    @keyframes gradient-shift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    .animated-gradient { background-size: 200% 200%; animation: gradient-shift 8s ease infinite; }
   </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-navy text-gray-900">
 
   <!-- Top Banner -->
-  <div class="bg-accent text-white text-center py-2.5 text-[13px]">
+  <div class="bg-gradient-to-r from-accent via-purple-600 to-magenta text-white text-center py-2.5 text-[13px] animated-gradient">
     Bounteous acquires Cartesian to Expand Data, AI, &amp; Telecom Expertise
-    <a href="#" class="ml-2 underline font-medium">Learn More &rarr;</a>
+    <a href="#" class="ml-2 underline font-medium hover:text-accentLight transition">Learn More &rarr;</a>
   </div>
 
   <!-- Navbar -->
-  <nav class="bg-navy">
+  <nav class="bg-navy/95 backdrop-blur-md sticky top-0 z-50 border-b border-white/5">
     <div class="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-16">
       <div class="flex items-center gap-8">
-        <a href="#" class="text-white font-bold text-[22px] tracking-tight">bounteous</a>
+        <a href="#" class="text-white font-bold text-[22px] tracking-tight hover:text-accent transition">bounteous</a>
         <div class="hidden md:flex items-center gap-6 text-[14px] text-gray-300">
-          <a href="#" class="hover:text-white">Bounteous Arc</a>
-          <a href="#" class="hover:text-white">Our Solutions</a>
-          <a href="#" class="hover:text-white">Industries We Serve</a>
-          <a href="#" class="hover:text-white">Our Work</a>
-          <a href="#" class="hover:text-white">Who We Are</a>
+          <a href="#" class="nav-link hover:text-white transition">Bounteous Arc</a>
+          <a href="#" class="nav-link hover:text-white transition">Our Solutions</a>
+          <a href="#" class="nav-link hover:text-white transition">Industries We Serve</a>
+          <a href="#" class="nav-link hover:text-white transition">Our Work</a>
+          <a href="#" class="nav-link hover:text-white transition">Who We Are</a>
         </div>
       </div>
       <div class="flex items-center gap-4 text-[14px]">
-        <button class="text-gray-300 hover:text-white">
+        <button class="text-gray-300 hover:text-white transition">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </button>
-        <a href="#" class="border border-gray-500 text-white px-5 py-2 rounded-full text-[13px] font-medium hover:bg-white hover:text-navy transition">Contact us</a>
+        <a href="#" class="border border-gray-500 text-white px-5 py-2 rounded-full text-[13px] font-medium hover:bg-accent hover:border-accent transition-all duration-300">Contact us</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="relative bg-navy overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-r from-navy via-purple-900/40 to-navy"></div>
-    <div class="relative max-w-[1200px] mx-auto px-6 py-24 min-h-[420px] flex flex-col justify-center">
-      <h1 class="text-[48px] leading-[1.1] font-bold text-white mb-6 max-w-[650px]">Accelerate Software Delivery with <span class="text-accent">Intelligent Product Engineering</span></h1>
-      <a href="#" class="text-gray-300 text-[15px] hover:text-white flex items-center gap-2">
-        Explore AI engineering solution <span>&rarr;</span>
+  <section class="relative bg-navy overflow-hidden min-h-[480px] flex items-center">
+    <!-- Animated glow orbs -->
+    <div class="hero-glow bg-accent top-[-100px] left-[-100px]"></div>
+    <div class="hero-glow bg-magenta top-[100px] right-[-150px]" style="animation-delay: 1.5s;"></div>
+    <div class="hero-glow bg-accentLight bottom-[-150px] left-[30%]" style="animation-delay: 3s; opacity: 0.15;"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-navy via-transparent to-navy"></div>
+    <div class="relative max-w-[1200px] mx-auto px-6 py-24 w-full">
+      <h1 class="text-[52px] leading-[1.08] font-bold text-white mb-6 max-w-[680px] animate-fade-up">Accelerate Software Delivery with <span class="text-gradient">Intelligent Product Engineering</span></h1>
+      <a href="#" class="opacity-0 animate-fade-up-delay text-gray-300 text-[15px] hover:text-accentLight flex items-center gap-2 group transition">
+        Explore AI engineering solution <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
       </a>
     </div>
   </section>
 
   <!-- Client Logo Bar -->
-  <section class="py-8 bg-white border-b border-gray-100">
-    <div class="max-w-[1100px] mx-auto flex items-center justify-center gap-12 px-6 opacity-50 flex-nowrap overflow-hidden">
-      <span class="text-[16px] font-bold text-gray-600 whitespace-nowrap tracking-wide">CAESARS</span>
-      <span class="text-[18px] font-black text-gray-600 whitespace-nowrap">MARS</span>
-      <span class="text-[16px] font-medium italic text-gray-600 whitespace-nowrap">fiserv.</span>
-      <span class="text-[14px] font-semibold text-gray-600 whitespace-nowrap tracking-wider">COMMERZBANK</span>
-      <span class="text-[18px] font-bold text-gray-600 whitespace-nowrap">Wawa</span>
-      <span class="text-[16px] font-medium text-gray-600 whitespace-nowrap">PBS</span>
-      <span class="text-[16px] font-medium text-gray-600 whitespace-nowrap">Allsteel</span>
+  <section class="py-6 bg-white/[0.03] border-y border-white/5 overflow-hidden">
+    <div class="flex animate-logo-scroll whitespace-nowrap">
+      <div class="flex items-center gap-16 px-8 min-w-max">
+        <span class="text-[16px] font-bold text-gray-500 tracking-wide">CAESARS</span>
+        <span class="text-[18px] font-black text-gray-500">MARS</span>
+        <span class="text-[16px] font-medium italic text-gray-500">fiserv.</span>
+        <span class="text-[14px] font-semibold text-gray-500 tracking-wider">COMMERZBANK</span>
+        <span class="text-[18px] font-bold text-gray-500">Wawa</span>
+        <span class="text-[16px] font-medium text-gray-500">PBS</span>
+        <span class="text-[16px] font-medium text-gray-500">Allsteel</span>
+      </div>
+      <div class="flex items-center gap-16 px-8 min-w-max">
+        <span class="text-[16px] font-bold text-gray-500 tracking-wide">CAESARS</span>
+        <span class="text-[18px] font-black text-gray-500">MARS</span>
+        <span class="text-[16px] font-medium italic text-gray-500">fiserv.</span>
+        <span class="text-[14px] font-semibold text-gray-500 tracking-wider">COMMERZBANK</span>
+        <span class="text-[18px] font-bold text-gray-500">Wawa</span>
+        <span class="text-[16px] font-medium text-gray-500">PBS</span>
+        <span class="text-[16px] font-medium text-gray-500">Allsteel</span>
+      </div>
     </div>
   </section>
 
   <!-- Mission Statement -->
-  <section class="py-20 bg-navy">
-    <div class="max-w-[800px] mx-auto text-center px-6">
-      <p class="text-[36px] leading-snug font-light text-white">Where <span class="text-accent font-medium">agentic engineering</span> and <span class="text-accentLight font-medium">human experience</span> converge to deliver enterprise outcomes.</p>
+  <section class="py-24 bg-navy relative overflow-hidden">
+    <div class="absolute inset-0 bg-shimmer"></div>
+    <div class="max-w-[800px] mx-auto text-center px-6 relative animate-on-scroll">
+      <p class="text-[40px] leading-snug font-light text-white">Where <span class="text-gradient font-medium">agentic engineering</span> and <span class="text-accentLight font-medium">human experience</span> converge to deliver enterprise outcomes.</p>
     </div>
   </section>
+
+  <div class="section-divider"></div>
 
   <!-- Bounteous Arc -->
-  <section class="py-16 bg-navy">
-    <div class="max-w-[1100px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <div class="bg-gradient-to-br from-navy via-purple-900/30 to-navy rounded-2xl h-[280px] flex items-end p-8">
-        <div>
-          <span class="text-white text-[32px] font-bold">bounteous </span>
-          <span class="text-accent text-[32px] font-light">arc</span>
+  <section class="py-20 bg-navy relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-[300px] h-[300px] bg-accent/10 rounded-full blur-[100px]"></div>
+    <div class="max-w-[1100px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative">
+      <div class="bg-gradient-to-br from-purple-900/40 via-navy to-blue-900/30 rounded-2xl h-[300px] flex items-end p-8 border border-white/5 card-hover animate-on-scroll relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/80 to-transparent"></div>
+        <div class="relative">
+          <span class="text-white text-[36px] font-bold">bounteous </span>
+          <span class="text-accent text-[36px] font-light">arc</span>
         </div>
       </div>
-      <div>
+      <div class="animate-on-scroll">
         <p class="text-gray-300 text-[18px] leading-relaxed mb-6">The AI transformation system designed to unify your AI strategy, accelerate delivery, and bring agentic capabilities into your business faster and at scale.</p>
-        <a href="#" class="inline-block border border-accent text-accent px-6 py-2.5 rounded-full text-[14px] font-medium hover:bg-accent hover:text-white transition">Learn more</a>
+        <a href="#" class="inline-block border border-accent text-accent px-6 py-2.5 rounded-full text-[14px] font-medium hover:bg-accent hover:text-white hover:shadow-lg hover:shadow-accent/25 transition-all duration-300">Learn more</a>
       </div>
     </div>
   </section>
+
+  <div class="section-divider"></div>
 
   <!-- Solutions -->
-  <section class="py-16 bg-navy">
+  <section class="py-20 bg-navy">
     <div class="max-w-[1100px] mx-auto px-6">
-      <p class="text-[12px] uppercase tracking-[3px] text-gray-400 text-center mb-4">Solutions</p>
-      <h2 class="text-[36px] font-light text-white text-center mb-12"><span class="text-accent font-medium">Enterprise AI solutions</span> for organizations at every stage of adoption</h2>
+      <p class="text-[12px] uppercase tracking-[3px] text-gray-400 text-center mb-4 animate-on-scroll">Solutions</p>
+      <h2 class="text-[38px] font-light text-white text-center mb-14 animate-on-scroll"><span class="text-gradient font-medium">Enterprise AI solutions</span> for organizations at every stage of adoption</h2>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <div class="bg-gradient-to-br from-blue-900 to-purple-900 rounded-2xl p-6 h-[280px] flex flex-col justify-end">
-          <h3 class="text-white text-[17px] font-bold mb-2">Intelligent Product Engineering</h3>
-          <p class="text-gray-300 text-[13px]">Accelerate software delivery with agentic engineering</p>
-          <a href="#" class="text-gray-400 text-[13px] mt-3 hover:text-white">Learn more &rarr;</a>
+        <div class="bg-gradient-to-br from-blue-900 to-purple-900 rounded-2xl p-6 h-[300px] flex flex-col justify-end card-hover animate-on-scroll border border-white/5 relative overflow-hidden group">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative">
+            <h3 class="text-white text-[17px] font-bold mb-2">Intelligent Product Engineering</h3>
+            <p class="text-gray-300 text-[13px]">Accelerate software delivery with agentic engineering</p>
+            <a href="#" class="text-gray-400 text-[13px] mt-3 hover:text-accentLight inline-flex items-center gap-1 group/link transition">Learn more <span class="group-hover/link:translate-x-1 transition-transform">&rarr;</span></a>
+          </div>
         </div>
-        <div class="bg-gradient-to-br from-purple-900 to-pink-900 rounded-2xl p-6 h-[280px] flex flex-col justify-end">
-          <h3 class="text-white text-[17px] font-bold mb-2">AI-Enhanced Experience Transformation</h3>
-          <p class="text-gray-300 text-[13px]">Unlock growth with AI-led, human-centered experiences</p>
-          <a href="#" class="text-gray-400 text-[13px] mt-3 hover:text-white">Learn more &rarr;</a>
+        <div class="bg-gradient-to-br from-purple-900 to-pink-900 rounded-2xl p-6 h-[300px] flex flex-col justify-end card-hover animate-on-scroll border border-white/5 relative overflow-hidden group" style="transition-delay: 0.1s">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-magenta/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative">
+            <h3 class="text-white text-[17px] font-bold mb-2">AI-Enhanced Experience Transformation</h3>
+            <p class="text-gray-300 text-[13px]">Unlock growth with AI-led, human-centered experiences</p>
+            <a href="#" class="text-gray-400 text-[13px] mt-3 hover:text-accentLight inline-flex items-center gap-1 group/link transition">Learn more <span class="group-hover/link:translate-x-1 transition-transform">&rarr;</span></a>
+          </div>
         </div>
-        <div class="bg-gradient-to-br from-pink-900/60 to-cyan-900/60 rounded-2xl p-6 h-[280px] flex flex-col justify-end">
-          <h3 class="text-white text-[17px] font-bold mb-2">Modern Business Platforms</h3>
-          <p class="text-gray-300 text-[13px]">Maximize platform ROI with AI</p>
-          <a href="#" class="text-gray-400 text-[13px] mt-3 hover:text-white">Learn more &rarr;</a>
+        <div class="bg-gradient-to-br from-pink-900/60 to-cyan-900/60 rounded-2xl p-6 h-[300px] flex flex-col justify-end card-hover animate-on-scroll border border-white/5 relative overflow-hidden group" style="transition-delay: 0.2s">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-accentLight/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative">
+            <h3 class="text-white text-[17px] font-bold mb-2">Modern Business Platforms</h3>
+            <p class="text-gray-300 text-[13px]">Maximize platform ROI with AI</p>
+            <a href="#" class="text-gray-400 text-[13px] mt-3 hover:text-accentLight inline-flex items-center gap-1 group/link transition">Learn more <span class="group-hover/link:translate-x-1 transition-transform">&rarr;</span></a>
+          </div>
         </div>
-        <div class="bg-gradient-to-br from-teal-900/60 to-blue-900/60 rounded-2xl p-6 h-[280px] flex flex-col justify-end">
-          <h3 class="text-white text-[17px] font-bold mb-2">Agentic Business Reinvention</h3>
-          <p class="text-gray-300 text-[13px]">Transform workflows with agentic AI teammates</p>
-          <a href="#" class="text-gray-400 text-[13px] mt-3 hover:text-white">Learn more &rarr;</a>
+        <div class="bg-gradient-to-br from-teal-900/60 to-blue-900/60 rounded-2xl p-6 h-[300px] flex flex-col justify-end card-hover animate-on-scroll border border-white/5 relative overflow-hidden group" style="transition-delay: 0.3s">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-accentLight/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative">
+            <h3 class="text-white text-[17px] font-bold mb-2">Agentic Business Reinvention</h3>
+            <p class="text-gray-300 text-[13px]">Transform workflows with agentic AI teammates</p>
+            <a href="#" class="text-gray-400 text-[13px] mt-3 hover:text-accentLight inline-flex items-center gap-1 group/link transition">Learn more <span class="group-hover/link:translate-x-1 transition-transform">&rarr;</span></a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
   <!-- Industries -->
-  <section class="py-16 bg-navy">
+  <section class="py-20 bg-navy">
     <div class="max-w-[1100px] mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-        <div>
+        <div class="animate-on-scroll">
           <p class="text-[12px] uppercase tracking-[3px] text-gray-400 mb-4">Industries</p>
-          <h2 class="text-[36px] font-light text-white leading-snug mb-4">Deep Industry <span class="text-accent font-medium">Specialization</span></h2>
+          <h2 class="text-[38px] font-light text-white leading-snug mb-4">Deep Industry <span class="text-gradient font-medium">Specialization</span></h2>
           <p class="text-gray-400 text-[15px] leading-relaxed mb-6">Industry-specific challenges require extensive industry expertise. Our industry teams provide the strategic points of view that help companies compete and win digitally.</p>
-          <a href="#" class="inline-block bg-accent text-white px-6 py-2.5 rounded-full text-[14px] font-medium hover:bg-purple-700 transition">See the industries we serve</a>
+          <a href="#" class="inline-block bg-accent text-white px-6 py-2.5 rounded-full text-[14px] font-medium hover:bg-purple-600 hover:shadow-lg hover:shadow-accent/25 transition-all duration-300">See the industries we serve</a>
         </div>
         <div class="grid grid-cols-2 gap-3">
-          <div class="bg-navyLight rounded-xl p-5 border border-gray-800 hover:border-accent transition">
-            <h3 class="text-white text-[15px] font-bold mb-2">Consumer Goods</h3>
+          <div class="bg-navyLight rounded-xl p-5 border border-gray-800 hover:border-accent card-hover animate-on-scroll group">
+            <h3 class="text-white text-[15px] font-bold mb-2 group-hover:text-accent transition">Consumer Goods</h3>
             <p class="text-gray-400 text-[12px] leading-relaxed">Blending brand, tech, and insight to deepen consumer connections</p>
           </div>
-          <div class="bg-navyLight rounded-xl p-5 border border-gray-800 hover:border-accent transition">
-            <h3 class="text-white text-[15px] font-bold mb-2">Financial Services</h3>
+          <div class="bg-navyLight rounded-xl p-5 border border-gray-800 hover:border-accent card-hover animate-on-scroll group" style="transition-delay: 0.05s">
+            <h3 class="text-white text-[15px] font-bold mb-2 group-hover:text-accent transition">Financial Services</h3>
             <p class="text-gray-400 text-[12px] leading-relaxed">Balancing innovation, trust, and performance across every financial interaction</p>
           </div>
-          <div class="bg-navyLight rounded-xl p-5 border border-gray-800 hover:border-accent transition">
-            <h3 class="text-white text-[15px] font-bold mb-2">Healthcare</h3>
+          <div class="bg-navyLight rounded-xl p-5 border border-gray-800 hover:border-accent card-hover animate-on-scroll group" style="transition-delay: 0.1s">
+            <h3 class="text-white text-[15px] font-bold mb-2 group-hover:text-accent transition">Healthcare</h3>
             <p class="text-gray-400 text-[12px] leading-relaxed">Connecting people to the care and services they need, when and where they need them</p>
           </div>
-          <div class="bg-navyLight rounded-xl p-5 border border-gray-800 hover:border-accent transition">
-            <h3 class="text-white text-[15px] font-bold mb-2">Retail</h3>
+          <div class="bg-navyLight rounded-xl p-5 border border-gray-800 hover:border-accent card-hover animate-on-scroll group" style="transition-delay: 0.15s">
+            <h3 class="text-white text-[15px] font-bold mb-2 group-hover:text-accent transition">Retail</h3>
             <p class="text-gray-400 text-[12px] leading-relaxed">Modernizing retail systems to meet customer expectations and business goals</p>
           </div>
-          <div class="bg-navyLight rounded-xl p-5 border border-gray-800 hover:border-accent transition">
-            <h3 class="text-white text-[15px] font-bold mb-2">Telecommunications</h3>
+          <div class="bg-navyLight rounded-xl p-5 border border-gray-800 hover:border-accent card-hover animate-on-scroll group" style="transition-delay: 0.2s">
+            <h3 class="text-white text-[15px] font-bold mb-2 group-hover:text-accent transition">Telecommunications</h3>
             <p class="text-gray-400 text-[12px] leading-relaxed">Enabling seamless customer journeys and new revenue through modern technology</p>
           </div>
-          <div class="bg-navyLight rounded-xl p-5 border border-gray-800 hover:border-accent transition">
-            <h3 class="text-white text-[15px] font-bold mb-2">Travel &amp; Hospitality</h3>
+          <div class="bg-navyLight rounded-xl p-5 border border-gray-800 hover:border-accent card-hover animate-on-scroll group" style="transition-delay: 0.25s">
+            <h3 class="text-white text-[15px] font-bold mb-2 group-hover:text-accent transition">Travel &amp; Hospitality</h3>
             <p class="text-gray-400 text-[12px] leading-relaxed">Reinventing guest and customer experiences with AI-driven transformation</p>
           </div>
         </div>
@@ -175,159 +274,175 @@
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
   <!-- Latest Highlights -->
-  <section class="py-16 bg-navy">
+  <section class="py-20 bg-navy">
     <div class="max-w-[1100px] mx-auto px-6">
-      <p class="text-[12px] uppercase tracking-[3px] text-gray-400 text-center mb-4">Latest Highlights</p>
-      <h2 class="text-[36px] font-bold text-white text-center mb-12">Insights &amp; Expertise</h2>
+      <p class="text-[12px] uppercase tracking-[3px] text-gray-400 text-center mb-4 animate-on-scroll">Latest Highlights</p>
+      <h2 class="text-[38px] font-bold text-white text-center mb-14 animate-on-scroll">Insights &amp; Expertise</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-        <div class="bg-navyLight rounded-2xl overflow-hidden border border-gray-800 hover:border-accent transition">
-          <div class="h-[180px] bg-gradient-to-br from-purple-800 to-blue-900 flex items-center justify-center p-6">
-            <div class="text-center">
-              <span class="text-white text-[18px] font-bold">bounteous</span>
+        <div class="bg-navyLight rounded-2xl overflow-hidden border border-gray-800 hover:border-accent card-hover animate-on-scroll group">
+          <div class="h-[200px] bg-gradient-to-br from-purple-800 to-blue-900 flex items-center justify-center p-6 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="text-center relative">
+              <span class="text-white text-[20px] font-bold">bounteous</span>
               <div class="text-gray-400 text-[14px] mt-1">+ Cartesian</div>
             </div>
           </div>
-          <div class="p-5">
-            <span class="text-gray-500 text-[12px]">Press Release</span>
-            <h3 class="text-white text-[15px] font-bold mt-2 leading-snug">Bounteous Acquires Cartesian, Enhancing Deep Data and Analytics Capabilities to Accelerate Enterprise AI</h3>
-            <a href="#" class="text-gray-400 text-[13px] mt-3 inline-block hover:text-white">Read more &rarr;</a>
+          <div class="p-6">
+            <span class="text-accent text-[11px] font-semibold uppercase tracking-wider">Press Release</span>
+            <h3 class="text-white text-[16px] font-bold mt-2 leading-snug group-hover:text-accent transition">Bounteous Acquires Cartesian, Enhancing Deep Data and Analytics Capabilities to Accelerate Enterprise AI</h3>
+            <a href="#" class="text-gray-400 text-[13px] mt-4 inline-flex items-center gap-1 group/link hover:text-accentLight transition">Read more <span class="group-hover/link:translate-x-1 transition-transform">&rarr;</span></a>
           </div>
         </div>
-        <div class="bg-navyLight rounded-2xl overflow-hidden border border-gray-800 hover:border-accent transition">
-          <div class="h-[180px] bg-gradient-to-br from-indigo-800 to-purple-900 flex items-center justify-center p-6">
-            <div class="text-center">
+        <div class="bg-navyLight rounded-2xl overflow-hidden border border-gray-800 hover:border-accent card-hover animate-on-scroll group" style="transition-delay: 0.1s">
+          <div class="h-[200px] bg-gradient-to-br from-indigo-800 to-purple-900 flex items-center justify-center p-6 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-magenta/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="text-center relative">
               <span class="text-accentLight text-[16px] font-medium">2025 Vendor of the Year</span>
-              <div class="text-white text-[14px] mt-2 font-bold">Texas Roadhouse</div>
+              <div class="text-white text-[16px] mt-2 font-bold">Texas Roadhouse</div>
             </div>
           </div>
-          <div class="p-5">
-            <span class="text-gray-500 text-[12px]">Press Release</span>
-            <h3 class="text-white text-[15px] font-bold mt-2 leading-snug">Bounteous Named 2025 Texas Roadhouse Vendor of the Year</h3>
-            <a href="#" class="text-gray-400 text-[13px] mt-3 inline-block hover:text-white">Read more &rarr;</a>
+          <div class="p-6">
+            <span class="text-accent text-[11px] font-semibold uppercase tracking-wider">Press Release</span>
+            <h3 class="text-white text-[16px] font-bold mt-2 leading-snug group-hover:text-accent transition">Bounteous Named 2025 Texas Roadhouse Vendor of the Year</h3>
+            <a href="#" class="text-gray-400 text-[13px] mt-4 inline-flex items-center gap-1 group/link hover:text-accentLight transition">Read more <span class="group-hover/link:translate-x-1 transition-transform">&rarr;</span></a>
           </div>
         </div>
-        <div class="bg-navyLight rounded-2xl overflow-hidden border border-gray-800 hover:border-accent transition">
-          <div class="h-[180px] bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center p-6">
-            <div class="text-center">
-              <svg class="mx-auto mb-2" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#8ee7ff" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              <span class="text-gray-300 text-[13px]">Claude Code Workshop</span>
+        <div class="bg-navyLight rounded-2xl overflow-hidden border border-gray-800 hover:border-accent card-hover animate-on-scroll group" style="transition-delay: 0.2s">
+          <div class="h-[200px] bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center p-6 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-accentLight/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="text-center relative">
+              <svg class="mx-auto mb-2 animate-float" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#8ee7ff" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <span class="text-gray-300 text-[14px]">Claude Code Workshop</span>
             </div>
           </div>
-          <div class="p-5">
-            <span class="text-gray-500 text-[12px]">Press Release</span>
-            <h3 class="text-white text-[15px] font-bold mt-2 leading-snug">Bounteous Launches Claude Code Workshop Series</h3>
-            <a href="#" class="text-gray-400 text-[13px] mt-3 inline-block hover:text-white">Read more &rarr;</a>
+          <div class="p-6">
+            <span class="text-accent text-[11px] font-semibold uppercase tracking-wider">Press Release</span>
+            <h3 class="text-white text-[16px] font-bold mt-2 leading-snug group-hover:text-accent transition">Bounteous Launches Claude Code Workshop Series</h3>
+            <a href="#" class="text-gray-400 text-[13px] mt-4 inline-flex items-center gap-1 group/link hover:text-accentLight transition">Read more <span class="group-hover/link:translate-x-1 transition-transform">&rarr;</span></a>
           </div>
         </div>
       </div>
-      <div class="text-center">
-        <a href="#" class="inline-block border border-gray-600 text-gray-300 px-6 py-2.5 rounded-full text-[14px] font-medium hover:bg-white hover:text-navy transition">View more perspectives</a>
+      <div class="text-center animate-on-scroll">
+        <a href="#" class="inline-block border border-gray-600 text-gray-300 px-6 py-2.5 rounded-full text-[14px] font-medium hover:bg-accent hover:border-accent hover:text-white hover:shadow-lg hover:shadow-accent/25 transition-all duration-300">View more perspectives</a>
       </div>
     </div>
   </section>
+
+  <div class="section-divider"></div>
 
   <!-- Partners -->
-  <section class="py-16 bg-navy">
-    <div class="max-w-[1100px] mx-auto px-6">
+  <section class="py-20 bg-navy relative overflow-hidden">
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px]"></div>
+    <div class="max-w-[1100px] mx-auto px-6 relative">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-        <div>
+        <div class="animate-on-scroll">
           <p class="text-[12px] uppercase tracking-[3px] text-gray-400 mb-4">Partners</p>
-          <h2 class="text-[36px] font-light text-white leading-snug mb-4">Our Partnerships Accelerate <span class="text-accent font-medium">Innovation</span></h2>
+          <h2 class="text-[38px] font-light text-white leading-snug mb-4">Our Partnerships Accelerate <span class="text-gradient font-medium">Innovation</span></h2>
           <p class="text-gray-400 text-[15px] leading-relaxed mb-6">Platform and cloud partnerships are the foundation for agentic engineering and human experience at enterprise scale, turning platform investments into measurable business outcomes.</p>
-          <a href="#" class="inline-block bg-accent text-white px-6 py-2.5 rounded-full text-[14px] font-medium hover:bg-purple-700 transition">Meet our partners</a>
+          <a href="#" class="inline-block bg-accent text-white px-6 py-2.5 rounded-full text-[14px] font-medium hover:bg-purple-600 hover:shadow-lg hover:shadow-accent/25 transition-all duration-300">Meet our partners</a>
         </div>
-        <div class="grid grid-cols-3 gap-x-10 gap-y-8 items-center">
-          <span class="text-white text-[18px] font-bold">Adobe</span>
-          <span class="text-white text-[16px] font-medium">databricks</span>
-          <span class="text-white text-[20px] font-medium">Google</span>
-          <span class="text-white text-[18px] font-bold">aws</span>
-          <span class="text-white text-[15px] font-semibold tracking-wider">ANTHROPIC</span>
-          <span class="text-white text-[16px] font-medium italic">salesforce</span>
-          <span class="text-white text-[16px] font-medium">Microsoft</span>
-          <span class="text-white text-[18px] font-bold tracking-wide">ACQUIA</span>
-          <span class="text-white text-[14px] font-medium">snowflake</span>
-          <span class="text-white text-[18px] font-bold">olo</span>
-          <span class="text-white text-[16px] font-bold">MUREX</span>
-          <span class="text-white text-[15px] font-medium">bloomreach</span>
-          <span class="text-white text-[18px] font-medium">Drupal</span>
-          <span class="text-white text-[16px] font-medium">n8n</span>
-          <span class="text-white text-[16px] font-medium italic">crewai</span>
+        <div class="grid grid-cols-3 gap-x-10 gap-y-8 items-center animate-on-scroll">
+          <span class="partner-item text-white/70 text-[18px] font-bold cursor-default">Adobe</span>
+          <span class="partner-item text-white/70 text-[16px] font-medium cursor-default">databricks</span>
+          <span class="partner-item text-white/70 text-[20px] font-medium cursor-default">Google</span>
+          <span class="partner-item text-white/70 text-[18px] font-bold cursor-default">aws</span>
+          <span class="partner-item text-white/70 text-[15px] font-semibold tracking-wider cursor-default">ANTHROPIC</span>
+          <span class="partner-item text-white/70 text-[16px] font-medium italic cursor-default">salesforce</span>
+          <span class="partner-item text-white/70 text-[16px] font-medium cursor-default">Microsoft</span>
+          <span class="partner-item text-white/70 text-[18px] font-bold tracking-wide cursor-default">ACQUIA</span>
+          <span class="partner-item text-white/70 text-[14px] font-medium cursor-default">snowflake</span>
+          <span class="partner-item text-white/70 text-[18px] font-bold cursor-default">olo</span>
+          <span class="partner-item text-white/70 text-[16px] font-bold cursor-default">MUREX</span>
+          <span class="partner-item text-white/70 text-[15px] font-medium cursor-default">bloomreach</span>
+          <span class="partner-item text-white/70 text-[18px] font-medium cursor-default">Drupal</span>
+          <span class="partner-item text-white/70 text-[16px] font-medium cursor-default">n8n</span>
+          <span class="partner-item text-white/70 text-[16px] font-medium italic cursor-default">crewai</span>
         </div>
       </div>
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
   <!-- CTA Section -->
-  <section class="py-20 bg-gradient-to-br from-navy via-blue-900/40 to-navy">
-    <div class="max-w-[1100px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <div class="h-[320px] bg-gradient-to-br from-blue-900 to-cyan-900 rounded-2xl"></div>
-      <div>
+  <section class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-navy via-blue-900/30 to-navy"></div>
+    <div class="hero-glow bg-accent bottom-[-100px] right-[20%]" style="width: 400px; height: 400px;"></div>
+    <div class="max-w-[1100px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative">
+      <div class="h-[340px] bg-gradient-to-br from-blue-900 to-cyan-900 rounded-2xl border border-white/5 animate-on-scroll relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-accentLight to-magenta"></div>
+      </div>
+      <div class="animate-on-scroll">
         <p class="text-[12px] uppercase tracking-[3px] text-gray-400 mb-4">Get In Touch</p>
-        <h2 class="text-[36px] font-light text-white leading-snug">Let's discuss how Bounteous can help your organization turn <span class="text-accent font-medium">AI into business outcomes</span></h2>
+        <h2 class="text-[40px] font-light text-white leading-snug">Let's discuss how Bounteous can help your organization turn <span class="text-gradient font-medium">AI into business outcomes</span></h2>
+        <a href="#" class="inline-block bg-accent text-white px-8 py-3 rounded-full text-[15px] font-medium mt-8 hover:bg-purple-600 hover:shadow-lg hover:shadow-accent/25 transition-all duration-300">Get started</a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-navy pt-16 pb-8 px-6 border-t border-gray-800">
+  <footer class="bg-navy pt-16 pb-8 px-6 border-t border-white/5">
     <div class="max-w-[1100px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
       <div>
         <h4 class="text-[14px] font-bold text-white mb-4">What We Do</h4>
         <ul class="space-y-2 text-[13px] text-gray-400">
-          <li><a href="#" class="hover:text-white">Expertise</a></li>
-          <li><a href="#" class="hover:text-white">Partners</a></li>
-          <li><a href="#" class="hover:text-white">Bounteous Arc</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Expertise</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Partners</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Bounteous Arc</a></li>
         </ul>
         <h4 class="text-[14px] font-bold text-white mt-6 mb-4">Who We Are</h4>
         <ul class="space-y-2 text-[13px] text-gray-400">
-          <li><a href="#" class="hover:text-white">About Us</a></li>
-          <li><a href="#" class="hover:text-white">Careers</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">About Us</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Careers</a></li>
         </ul>
         <h4 class="text-[14px] font-bold text-white mt-6 mb-4">Our Work</h4>
         <ul class="space-y-2 text-[13px] text-gray-400">
-          <li><a href="#" class="hover:text-white">Case Studies</a></li>
-          <li><a href="#" class="hover:text-white">Co-Innovation</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Case Studies</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Co-Innovation</a></li>
         </ul>
       </div>
       <div>
         <h4 class="text-[14px] font-bold text-white mb-4">Solutions</h4>
         <ul class="space-y-2 text-[13px] text-gray-400">
-          <li><a href="#" class="hover:text-white">Intelligent Product Engineering</a></li>
-          <li><a href="#" class="hover:text-white">AI-Enhanced Experience Transformation</a></li>
-          <li><a href="#" class="hover:text-white">Modern Business Platforms</a></li>
-          <li><a href="#" class="hover:text-white">Agentic Business Reinvention</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Intelligent Product Engineering</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">AI-Enhanced Experience Transformation</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Modern Business Platforms</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Agentic Business Reinvention</a></li>
         </ul>
         <h4 class="text-[14px] font-bold text-white mt-6 mb-4">Thought Leadership</h4>
         <ul class="space-y-2 text-[13px] text-gray-400">
-          <li><a href="#" class="hover:text-white">News &amp; Insights</a></li>
-          <li><a href="#" class="hover:text-white">Events &amp; Webinars</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">News &amp; Insights</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Events &amp; Webinars</a></li>
         </ul>
       </div>
       <div>
         <h4 class="text-[14px] font-bold text-white mb-4">Industries We Serve</h4>
         <ul class="space-y-2 text-[13px] text-gray-400">
-          <li><a href="#" class="hover:text-white">Consumer Goods</a></li>
-          <li><a href="#" class="hover:text-white">Financial Services</a></li>
-          <li><a href="#" class="hover:text-white">Healthcare</a></li>
-          <li><a href="#" class="hover:text-white">Industrial, Manufacturing, &amp; Logistics</a></li>
-          <li><a href="#" class="hover:text-white">Media, Entertainment, Technology</a></li>
-          <li><a href="#" class="hover:text-white">Retail</a></li>
-          <li><a href="#" class="hover:text-white">Telecommunications</a></li>
-          <li><a href="#" class="hover:text-white">Travel, Hospitality, &amp; Restaurant</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Consumer Goods</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Financial Services</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Healthcare</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Industrial, Manufacturing, &amp; Logistics</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Media, Entertainment, Technology</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Retail</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Telecommunications</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Travel, Hospitality, &amp; Restaurant</a></li>
         </ul>
       </div>
       <div>
         <h4 class="text-[14px] font-bold text-white mb-4">Services</h4>
         <ul class="space-y-2 text-[13px] text-gray-400">
-          <li><a href="#" class="hover:text-white">Artificial Intelligence</a></li>
-          <li><a href="#" class="hover:text-white">Data &amp; Analytics</a></li>
-          <li><a href="#" class="hover:text-white">Experience Innovation &amp; Design</a></li>
-          <li><a href="#" class="hover:text-white">Digital Product &amp; Platform Engineering</a></li>
-          <li><a href="#" class="hover:text-white">Enterprise Digital Transformation</a></li>
-          <li><a href="#" class="hover:text-white">Cloud Enablement &amp; Modernization</a></li>
-          <li><a href="#" class="hover:text-white">Marketing Activation &amp; Loyalty</a></li>
-          <li><a href="#" class="hover:text-white">Digital Commerce</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Artificial Intelligence</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Data &amp; Analytics</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Experience Innovation &amp; Design</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Digital Product &amp; Platform Engineering</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Enterprise Digital Transformation</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Cloud Enablement &amp; Modernization</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Marketing Activation &amp; Loyalty</a></li>
+          <li><a href="#" class="hover:text-accentLight transition">Digital Commerce</a></li>
         </ul>
       </div>
       <div>
@@ -344,32 +459,44 @@
     </div>
 
     <!-- Footer bottom -->
-    <div class="max-w-[1100px] mx-auto border-t border-gray-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="max-w-[1100px] mx-auto border-t border-white/5 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-6">
         <span class="text-white font-bold text-[18px]">bounteous</span>
         <span class="text-gray-500 text-[12px]">PHONE: (877) 220-5862</span>
       </div>
       <div class="flex items-center gap-4">
-        <!-- Social icons -->
-        <a href="#" class="text-gray-400 hover:text-white">
+        <a href="#" class="text-gray-500 hover:text-accentLight transition-all hover:scale-110">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
-        <a href="#" class="text-gray-400 hover:text-white">
+        <a href="#" class="text-gray-500 hover:text-accentLight transition-all hover:scale-110">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         </a>
-        <a href="#" class="text-gray-400 hover:text-white">
+        <a href="#" class="text-gray-500 hover:text-accentLight transition-all hover:scale-110">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
         </a>
       </div>
       <div class="flex items-center gap-4 text-[12px] text-gray-500">
         <span>&copy; 2026 Bounteous</span>
-        <a href="#" class="hover:text-white">Legal Notices</a>
-        <a href="#" class="hover:text-white">Newsroom</a>
-        <a href="#" class="hover:text-white">Privacy</a>
-        <a href="#" class="hover:text-white">Accessibility</a>
+        <a href="#" class="hover:text-accentLight transition">Legal Notices</a>
+        <a href="#" class="hover:text-accentLight transition">Newsroom</a>
+        <a href="#" class="hover:text-accentLight transition">Privacy</a>
+        <a href="#" class="hover:text-accentLight transition">Accessibility</a>
       </div>
     </div>
   </footer>
+
+  <!-- Scroll animation script -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
