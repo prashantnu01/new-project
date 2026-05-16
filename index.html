@@ -3,741 +3,373 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Acctual - Small business invoices that get paid faster</title>
+  <title>Bounteous - Where Agentic Engineering Meets Human Experience</title>
   <script src="tailwind.js"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            primary: '#000000e6',
-            secondary: '#666',
-            accent: '#0098f2',
-            pink: '#f200ca',
-            purple: '#6c56fc',
-            dark: '#1e1e1e',
-            muted: '#8d8d8d',
-            surface: '#fafafa',
-            pageBg: '#f7fafc',
-            green: '#5d9c06',
-            red: '#ff6363',
+            navy: '#0b111c',
+            navyLight: '#111827',
+            accent: '#7c3aed',
+            accentLight: '#8ee7ff',
+            magenta: '#d200b5',
+            surface: '#f3f3f5',
           },
           fontFamily: {
-            sans: ['sans-serif'],
+            sans: ['system-ui', '-apple-system', 'sans-serif'],
           }
         }
       }
     }
   </script>
   <style>
-    body {
-      -webkit-font-smoothing: inherit;
-      font-family: sans-serif;
-      font-size: 12px;
-      background: #f7fafc;
-    }
+    body { font-family: system-ui, -apple-system, sans-serif; }
   </style>
 </head>
-<body class="bg-pageBg text-primary">
+<body class="bg-white text-gray-900">
+
+  <!-- Top Banner -->
+  <div class="bg-accent text-white text-center py-2.5 text-[13px]">
+    Bounteous acquires Cartesian to Expand Data, AI, &amp; Telecom Expertise
+    <a href="#" class="ml-2 underline font-medium">Learn More &rarr;</a>
+  </div>
 
   <!-- Navbar -->
-  <nav class="bg-white border-b border-gray-100">
-    <div class="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-14">
+  <nav class="bg-navy">
+    <div class="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-16">
       <div class="flex items-center gap-8">
-        <a href="#" class="flex items-center gap-1.5 font-bold text-[18px] text-black tracking-tight">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 12h16M12 4v16M7 7l10 10M17 7L7 17"/></svg>
-          Acctual
-        </a>
-        <div class="hidden md:flex items-center gap-6 text-[14px] text-gray-600">
-          <a href="#" class="hover:text-black">Freelancer</a>
-          <a href="#" class="hover:text-black">Agency</a>
-          <a href="#" class="hover:text-black">Pricing</a>
-          <a href="#" class="hover:text-black">Blog</a>
-          <a href="#" class="hover:text-black">Guides</a>
+        <a href="#" class="text-white font-bold text-[22px] tracking-tight">bounteous</a>
+        <div class="hidden md:flex items-center gap-6 text-[14px] text-gray-300">
+          <a href="#" class="hover:text-white">Bounteous Arc</a>
+          <a href="#" class="hover:text-white">Our Solutions</a>
+          <a href="#" class="hover:text-white">Industries We Serve</a>
+          <a href="#" class="hover:text-white">Our Work</a>
+          <a href="#" class="hover:text-white">Who We Are</a>
         </div>
       </div>
       <div class="flex items-center gap-4 text-[14px]">
-        <a href="#" class="text-gray-600 hover:text-black">Log in</a>
-        <a href="#" class="bg-black text-white px-4 py-2 rounded-lg text-[13px] font-medium hover:bg-gray-800">Sign up for free</a>
+        <button class="text-gray-300 hover:text-white">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="#" class="border border-gray-500 text-white px-5 py-2 rounded-full text-[13px] font-medium hover:bg-white hover:text-navy transition">Contact us</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="relative overflow-hidden pt-16 pb-12">
-    <!-- Decorative elements left -->
-    <div class="absolute top-10 -left-6 w-[160px] opacity-40 rotate-[-12deg]">
-      <div class="bg-white rounded-xl shadow-lg p-3 border border-gray-100">
-        <div class="text-[8px] text-gray-300 uppercase tracking-wider">Invoice No</div>
-        <div class="text-[10px] font-bold text-gray-400 mb-2">001</div>
-        <div class="text-[8px] text-gray-300 uppercase">From</div>
-        <div class="w-5 h-5 rounded-full bg-blue-300 mb-1 mt-1"></div>
-        <div class="text-[9px] font-bold text-gray-400">Marble Studio</div>
-      </div>
-    </div>
-    <!-- Decorative elements right -->
-    <div class="absolute top-10 -right-6 w-[160px] opacity-40 rotate-[12deg]">
-      <div class="bg-white rounded-xl shadow-lg p-3 border border-gray-100">
-        <div class="h-2 bg-gray-100 rounded mb-2 w-3/4"></div>
-        <div class="h-2 bg-gray-100 rounded mb-2 w-1/2"></div>
-        <div class="h-2 bg-gray-100 rounded w-2/3"></div>
-      </div>
-    </div>
-
-    <div class="max-w-[700px] mx-auto text-center px-6 relative z-10">
-      <span class="inline-block bg-green-100 text-green-700 text-[12px] font-medium px-3 py-1 rounded-full mb-6">Used by 5,000+ businesses worldwide</span>
-      <h1 class="text-[42px] leading-[1.15] font-bold text-black mb-4">Small business invoices<br>that get paid faster</h1>
-      <p class="text-[15px] text-gray-500 mb-6 leading-relaxed">Send an invoice in seconds. Your clients pay how they want.<br>You get paid direct to your bank or wallet, with <u>no monthly fee</u>.</p>
-      <a href="#" class="inline-block bg-black text-white px-6 py-3 rounded-lg text-[14px] font-medium hover:bg-gray-800 mb-6">Send my first invoice</a>
-      <div class="flex items-center justify-center gap-6 text-[13px]">
-        <span class="flex items-center gap-1.5">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="#3b82f6"><circle cx="8" cy="8" r="8"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" fill="none"/></svg>
-          Cards 2.7% <span class="text-red-500 text-[11px] ml-1">&#9660; 0.2%</span>
-        </span>
-        <span class="flex items-center gap-1.5">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="#3b82f6"><circle cx="8" cy="8" r="8"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" fill="none"/></svg>
-          Bank transfer 1%
-        </span>
-        <span class="flex items-center gap-1.5">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="#3b82f6"><circle cx="8" cy="8" r="8"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" fill="none"/></svg>
-          Stablecoin 1%
-        </span>
-      </div>
-    </div>
-
-    <!-- Invoice preview -->
-    <div class="max-w-[520px] mx-auto mt-10 relative z-10">
-      <div class="bg-white rounded-xl shadow-xl p-6 border border-gray-100">
-        <div class="text-[10px] text-gray-400 uppercase tracking-wider mb-0.5">Invoice No</div>
-        <div class="text-[14px] font-bold text-black mb-4">001</div>
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <div>
-            <div class="text-[10px] text-gray-400 uppercase tracking-wider mb-2">From</div>
-            <div class="w-8 h-8 rounded-full bg-blue-500 mb-2"></div>
-            <div class="text-[14px] font-bold">Marble Studio</div>
-            <div class="text-[11px] text-gray-400">billing@marble.studio</div>
-            <div class="text-[11px] text-gray-400 mt-1">142 Evergreen Terrace,<br>Springfield, OR 97477</div>
-          </div>
-          <div>
-            <div class="text-[10px] text-gray-400 uppercase tracking-wider mb-2">To</div>
-            <div class="w-8 h-8 rounded-full bg-green-400 flex items-center justify-center text-white text-[16px] font-light mb-2">+</div>
-            <div class="text-[14px] font-bold">Charm AI</div>
-            <div class="text-[11px] text-gray-400">billing@charm.ai</div>
-            <div class="text-[11px] text-gray-400 mt-1">1312 Mockingbird Lane,<br>Los Angeles, CA 90028</div>
-          </div>
-        </div>
-        <div class="border-t border-gray-100 pt-3">
-          <div class="grid grid-cols-4 text-[10px] text-gray-400 uppercase tracking-wider mb-2">
-            <span>Description</span><span class="text-center">Qty</span><span class="text-center">Price</span><span class="text-right">Amount</span>
-          </div>
-          <div class="grid grid-cols-4 text-[13px]">
-            <span class="font-medium">Design Services</span><span class="text-center">1</span><span class="text-center">$45,000</span><span class="text-right font-medium">$45,000.00</span>
-          </div>
-        </div>
-      </div>
+  <section class="relative bg-navy overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-navy via-purple-900/40 to-navy"></div>
+    <div class="relative max-w-[1200px] mx-auto px-6 py-24 min-h-[420px] flex flex-col justify-center">
+      <h1 class="text-[48px] leading-[1.1] font-bold text-white mb-6 max-w-[650px]">Accelerate Software Delivery with <span class="text-accent">Intelligent Product Engineering</span></h1>
+      <a href="#" class="text-gray-300 text-[15px] hover:text-white flex items-center gap-2">
+        Explore AI engineering solution <span>&rarr;</span>
+      </a>
     </div>
   </section>
 
-  <!-- Logo Bar -->
-  <section class="py-10 bg-white">
-    <p class="text-center text-[13px] text-gray-400 mb-6">Used by 5,000+ businesses &amp; freelancers</p>
-    <div class="max-w-[1100px] mx-auto flex items-center justify-center gap-8 px-6 opacity-40 flex-nowrap overflow-hidden">
-      <span class="text-[15px] font-semibold text-gray-500 whitespace-nowrap">PROSPERA</span>
-      <span class="text-[15px] font-semibold text-gray-500 whitespace-nowrap">ARABIAN</span>
-      <span class="text-[15px] font-serif italic text-gray-500 whitespace-nowrap">RAPOSA</span>
-      <span class="text-[15px] font-medium text-gray-500 whitespace-nowrap">superteam</span>
-      <span class="text-[15px] font-medium italic text-gray-500 whitespace-nowrap">Airfoil</span>
-      <span class="text-[15px] font-semibold text-gray-500 whitespace-nowrap">SOLANA FOUNDATION</span>
-      <span class="text-[15px] font-medium text-gray-500 whitespace-nowrap">ethereum foundation</span>
-      <span class="text-[15px] font-medium text-gray-500 whitespace-nowrap">/ kargul.studio</span>
+  <!-- Client Logo Bar -->
+  <section class="py-8 bg-white border-b border-gray-100">
+    <div class="max-w-[1100px] mx-auto flex items-center justify-center gap-12 px-6 opacity-50 flex-nowrap overflow-hidden">
+      <span class="text-[16px] font-bold text-gray-600 whitespace-nowrap tracking-wide">CAESARS</span>
+      <span class="text-[18px] font-black text-gray-600 whitespace-nowrap">MARS</span>
+      <span class="text-[16px] font-medium italic text-gray-600 whitespace-nowrap">fiserv.</span>
+      <span class="text-[14px] font-semibold text-gray-600 whitespace-nowrap tracking-wider">COMMERZBANK</span>
+      <span class="text-[18px] font-bold text-gray-600 whitespace-nowrap">Wawa</span>
+      <span class="text-[16px] font-medium text-gray-600 whitespace-nowrap">PBS</span>
+      <span class="text-[16px] font-medium text-gray-600 whitespace-nowrap">Allsteel</span>
     </div>
   </section>
 
-  <!-- Testimonial 1 -->
-  <section class="py-12">
-    <div class="max-w-[620px] mx-auto bg-white rounded-2xl p-10 text-center shadow-sm">
-      <div class="flex items-center justify-center gap-1 mb-3">
-        <svg width="18" height="18" viewBox="0 0 20 20" fill="#facc15"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-        <svg width="18" height="18" viewBox="0 0 20 20" fill="#facc15"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-        <svg width="18" height="18" viewBox="0 0 20 20" fill="#facc15"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-        <svg width="18" height="18" viewBox="0 0 20 20" fill="#facc15"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-        <svg width="18" height="18" viewBox="0 0 20 20" fill="#facc15"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-      </div>
-      <p class="text-[22px] font-bold text-black leading-snug mb-4">"Acctual makes invoices so easy. One click and 30 minutes later we get paid!"</p>
-      <p class="text-[14px] text-gray-400 italic">Marcel Kargul, founder of Kargul Studio</p>
+  <!-- Mission Statement -->
+  <section class="py-20 bg-navy">
+    <div class="max-w-[800px] mx-auto text-center px-6">
+      <p class="text-[36px] leading-snug font-light text-white">Where <span class="text-accent font-medium">agentic engineering</span> and <span class="text-accentLight font-medium">human experience</span> converge to deliver enterprise outcomes.</p>
     </div>
   </section>
 
-  <!-- Who is this for? -->
-  <section class="py-16 px-6">
-    <div class="max-w-[800px] mx-auto text-center mb-10">
-      <p class="text-accent text-[14px] font-medium mb-3">Who is this for?</p>
-      <h2 class="text-[32px] font-bold text-black leading-snug">We designed an invoice that<br>works harder for your business</h2>
-    </div>
-    <div class="max-w-[800px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="bg-white rounded-xl p-6 border border-gray-100">
-        <div class="w-8 h-8 rounded-md bg-blue-100 flex items-center justify-center mb-3">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </div>
-        <h3 class="text-[15px] font-bold mb-2">Freelancers</h3>
-        <p class="text-[13px] text-gray-500 leading-relaxed">Make more profit on every project and get paid faster with automatic nudges and no subscription fees.</p>
-      </div>
-      <div class="bg-white rounded-xl p-6 border border-gray-100">
-        <div class="w-8 h-8 rounded-md bg-red-100 flex items-center justify-center mb-3">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <h3 class="text-[15px] font-bold mb-2">Agencies</h3>
-        <p class="text-[13px] text-gray-500 leading-relaxed">Reclaim billable hours and shift your team's focus from admin to growth with our accounting sync.</p>
-      </div>
-      <div class="bg-white rounded-xl p-6 border border-gray-100">
-        <div class="w-8 h-8 rounded-md bg-purple-100 flex items-center justify-center mb-3">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-        </div>
-        <h3 class="text-[15px] font-bold mb-2">Consultants</h3>
-        <p class="text-[13px] text-gray-500 leading-relaxed">Target high ticket clients thanks to improved cash flow and a professional payment experience.</p>
-      </div>
-      <div class="bg-white rounded-xl p-6 border border-gray-100">
-        <div class="w-8 h-8 rounded-md bg-green-100 flex items-center justify-center mb-3">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-        </div>
-        <h3 class="text-[15px] font-bold mb-2">Contractors</h3>
-        <p class="text-[13px] text-gray-500 leading-relaxed">Get paid on the job and book bigger projects with increased working capital from same day payouts.</p>
-      </div>
-      <div class="bg-white rounded-xl p-6 border border-gray-100">
-        <div class="w-8 h-8 rounded-md bg-orange-100 flex items-center justify-center mb-3">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
-        </div>
-        <h3 class="text-[15px] font-bold mb-2">eCommerce</h3>
-        <p class="text-[13px] text-gray-500 leading-relaxed">Fund your next inventory run free from frozen capital worries thanks to our direct bank payments.</p>
-      </div>
-      <div class="bg-white rounded-xl p-6 border border-gray-100">
-        <div class="w-8 h-8 rounded-md bg-cyan-100 flex items-center justify-center mb-3">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-        </div>
-        <h3 class="text-[15px] font-bold mb-2">Cross border</h3>
-        <p class="text-[13px] text-gray-500 leading-relaxed">Reach new markets and win global contracts with a faster strategy to capture local payments.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Accounting platforms are slow -->
-  <section class="py-16 px-6">
-    <div class="max-w-[800px] mx-auto">
-      <h2 class="text-[32px] font-bold text-black leading-snug mb-8">Accounting platforms are a slow,<br>expensive way to invoice clients</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+  <!-- Bounteous Arc -->
+  <section class="py-16 bg-navy">
+    <div class="max-w-[1100px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="bg-gradient-to-br from-navy via-purple-900/30 to-navy rounded-2xl h-[280px] flex items-end p-8">
         <div>
-          <h3 class="text-red-500 font-bold text-[14px] mb-2">Slow</h3>
-          <p class="text-[13px] text-gray-500 leading-relaxed"><strong class="text-black">Your clients want more payment methods</strong> — but you need a faster way to send funds to your bank account or wallet.</p>
+          <span class="text-white text-[32px] font-bold">bounteous </span>
+          <span class="text-accent text-[32px] font-light">arc</span>
         </div>
+      </div>
+      <div>
+        <p class="text-gray-300 text-[18px] leading-relaxed mb-6">The AI transformation system designed to unify your AI strategy, accelerate delivery, and bring agentic capabilities into your business faster and at scale.</p>
+        <a href="#" class="inline-block border border-accent text-accent px-6 py-2.5 rounded-full text-[14px] font-medium hover:bg-accent hover:text-white transition">Learn more</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section class="py-16 bg-navy">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <p class="text-[12px] uppercase tracking-[3px] text-gray-400 text-center mb-4">Solutions</p>
+      <h2 class="text-[36px] font-light text-white text-center mb-12"><span class="text-accent font-medium">Enterprise AI solutions</span> for organizations at every stage of adoption</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="bg-gradient-to-br from-blue-900 to-purple-900 rounded-2xl p-6 h-[280px] flex flex-col justify-end">
+          <h3 class="text-white text-[17px] font-bold mb-2">Intelligent Product Engineering</h3>
+          <p class="text-gray-300 text-[13px]">Accelerate software delivery with agentic engineering</p>
+          <a href="#" class="text-gray-400 text-[13px] mt-3 hover:text-white">Learn more &rarr;</a>
+        </div>
+        <div class="bg-gradient-to-br from-purple-900 to-pink-900 rounded-2xl p-6 h-[280px] flex flex-col justify-end">
+          <h3 class="text-white text-[17px] font-bold mb-2">AI-Enhanced Experience Transformation</h3>
+          <p class="text-gray-300 text-[13px]">Unlock growth with AI-led, human-centered experiences</p>
+          <a href="#" class="text-gray-400 text-[13px] mt-3 hover:text-white">Learn more &rarr;</a>
+        </div>
+        <div class="bg-gradient-to-br from-pink-900/60 to-cyan-900/60 rounded-2xl p-6 h-[280px] flex flex-col justify-end">
+          <h3 class="text-white text-[17px] font-bold mb-2">Modern Business Platforms</h3>
+          <p class="text-gray-300 text-[13px]">Maximize platform ROI with AI</p>
+          <a href="#" class="text-gray-400 text-[13px] mt-3 hover:text-white">Learn more &rarr;</a>
+        </div>
+        <div class="bg-gradient-to-br from-teal-900/60 to-blue-900/60 rounded-2xl p-6 h-[280px] flex flex-col justify-end">
+          <h3 class="text-white text-[17px] font-bold mb-2">Agentic Business Reinvention</h3>
+          <p class="text-gray-300 text-[13px]">Transform workflows with agentic AI teammates</p>
+          <a href="#" class="text-gray-400 text-[13px] mt-3 hover:text-white">Learn more &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="py-16 bg-navy">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         <div>
-          <h3 class="text-yellow-500 font-bold text-[14px] mb-2">Expensive</h3>
-          <p class="text-[13px] text-gray-500 leading-relaxed"><strong class="text-black">You pay a monthly subscription</strong> — for bloated accounting features that you don't need, plus extra card fees on top.</p>
+          <p class="text-[12px] uppercase tracking-[3px] text-gray-400 mb-4">Industries</p>
+          <h2 class="text-[36px] font-light text-white leading-snug mb-4">Deep Industry <span class="text-accent font-medium">Specialization</span></h2>
+          <p class="text-gray-400 text-[15px] leading-relaxed mb-6">Industry-specific challenges require extensive industry expertise. Our industry teams provide the strategic points of view that help companies compete and win digitally.</p>
+          <a href="#" class="inline-block bg-accent text-white px-6 py-2.5 rounded-full text-[14px] font-medium hover:bg-purple-700 transition">See the industries we serve</a>
         </div>
-        <div>
-          <h3 class="text-purple font-bold text-[14px] mb-2">Confusing</h3>
-          <p class="text-[13px] text-gray-500 leading-relaxed"><strong class="text-black">You need a simple invoice solution</strong> — not a forced migration to another complex, expensive accounting platform.</p>
-        </div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-pink-100 rounded-2xl h-20 flex items-center justify-center">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </div>
-        <div class="bg-yellow-100 rounded-2xl h-20 flex items-center justify-center">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-        </div>
-        <div class="bg-purple-100 rounded-2xl h-20 flex items-center justify-center">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Same day payments -->
-  <section class="py-16 px-6">
-    <div class="max-w-[800px] mx-auto">
-      <h2 class="text-[32px] font-bold text-black leading-snug mb-2">Same day payments.<br>No subscription.</h2>
-      <p class="text-[14px] text-gray-500 mb-8 leading-relaxed"><strong class="text-black">Acctual offers more payment methods and no monthly fees.</strong> Generate a stunning invoice and get paid directly to your bank account or wallet.</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-        <div class="bg-white rounded-xl p-5 border border-gray-100">
-          <div class="mb-3">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="#3b82f6"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5" stroke="white" stroke-width="2" fill="none"/></svg>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="bg-navyLight rounded-xl p-5 border border-gray-800 hover:border-accent transition">
+            <h3 class="text-white text-[15px] font-bold mb-2">Consumer Goods</h3>
+            <p class="text-gray-400 text-[12px] leading-relaxed">Blending brand, tech, and insight to deepen consumer connections</p>
           </div>
-          <h3 class="text-[14px] font-bold leading-snug">The industry's lowest<br>transfer fees</h3>
-        </div>
-        <div class="bg-white rounded-xl p-5 border border-gray-100">
-          <div class="flex gap-1.5 mb-3">
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="#3b82f6"><rect width="20" height="20" rx="3"/></svg>
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="#eab308"><rect width="20" height="20" rx="3"/></svg>
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="#06b6d4"><circle cx="10" cy="10" r="10"/></svg>
+          <div class="bg-navyLight rounded-xl p-5 border border-gray-800 hover:border-accent transition">
+            <h3 class="text-white text-[15px] font-bold mb-2">Financial Services</h3>
+            <p class="text-gray-400 text-[12px] leading-relaxed">Balancing innovation, trust, and performance across every financial interaction</p>
           </div>
-          <h3 class="text-[14px] font-bold leading-snug">Payment via card, bank transfer or stablecoin</h3>
-        </div>
-        <div class="bg-white rounded-xl p-5 border border-gray-100">
-          <div class="mb-3">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="#eab308"><circle cx="10" cy="10" r="10"/></svg>
+          <div class="bg-navyLight rounded-xl p-5 border border-gray-800 hover:border-accent transition">
+            <h3 class="text-white text-[15px] font-bold mb-2">Healthcare</h3>
+            <p class="text-gray-400 text-[12px] leading-relaxed">Connecting people to the care and services they need, when and where they need them</p>
           </div>
-          <h3 class="text-[14px] font-bold leading-snug">Same day payouts in your favorite currency</h3>
-        </div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        <div class="bg-white rounded-xl p-5 border border-gray-100">
-          <div class="flex gap-1.5 mb-3">
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="#3b82f6"><rect width="20" height="20" rx="3"/></svg>
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="#eab308"><rect width="20" height="20" rx="3"/></svg>
+          <div class="bg-navyLight rounded-xl p-5 border border-gray-800 hover:border-accent transition">
+            <h3 class="text-white text-[15px] font-bold mb-2">Retail</h3>
+            <p class="text-gray-400 text-[12px] leading-relaxed">Modernizing retail systems to meet customer expectations and business goals</p>
           </div>
-          <h3 class="text-[14px] font-bold leading-snug">Direct payment to your bank account or wallet</h3>
-        </div>
-        <div class="bg-white rounded-xl p-5 border border-gray-100">
-          <div class="mb-3">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="#22c55e"><rect width="20" height="20" rx="3"/></svg>
+          <div class="bg-navyLight rounded-xl p-5 border border-gray-800 hover:border-accent transition">
+            <h3 class="text-white text-[15px] font-bold mb-2">Telecommunications</h3>
+            <p class="text-gray-400 text-[12px] leading-relaxed">Enabling seamless customer journeys and new revenue through modern technology</p>
           </div>
-          <h3 class="text-[14px] font-bold leading-snug">Unlimited invoices and<br>no subscription fees</h3>
-        </div>
-        <div class="bg-white rounded-xl p-5 border border-gray-100">
-          <div class="flex gap-1.5 mb-3">
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="#22c55e"><circle cx="10" cy="10" r="10"/></svg>
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="#8b5cf6"><circle cx="10" cy="10" r="10"/></svg>
-          </div>
-          <h3 class="text-[14px] font-bold leading-snug">Invoices sync with Xero<br>and Quickbooks</h3>
-        </div>
-      </div>
-      <a href="#" class="inline-block bg-black text-white px-5 py-2.5 rounded-lg text-[13px] font-medium hover:bg-gray-800">Create an invoice</a>
-    </div>
-  </section>
-
-  <!-- Faster invoice experience -->
-  <section class="py-12 px-6">
-    <div class="max-w-[800px] mx-auto">
-      <h2 class="text-[32px] font-bold text-black leading-snug mb-8">We designed a faster invoice<br>experience with lower fees</h2>
-
-      <!-- Feature 1: Beautiful invoice -->
-      <div class="mb-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <h3 class="text-[20px] font-bold text-black leading-snug">Create a beautiful invoice without hiring a professional designer</h3>
-          <p class="text-[14px] text-gray-500 leading-relaxed"><strong class="text-black">Your clients deserve a great payment experience.</strong> Acctual generates stunning, minimalist invoices that include your logo and client details in a few clicks. You can send as many invoices as you like. We'll never charge a monthly subscription.</p>
-        </div>
-        <div class="rounded-2xl overflow-hidden mb-6 h-[300px] bg-gradient-to-br from-amber-700 via-amber-800 to-amber-900 flex items-center justify-center">
-          <div class="bg-white rounded-lg shadow-2xl p-5 w-[280px] rotate-[-3deg]">
-            <div class="text-[8px] text-gray-400 uppercase">Invoice</div>
-            <div class="flex justify-between items-start mt-2">
-              <div><div class="w-5 h-5 rounded-full bg-blue-500"></div><div class="text-[9px] font-bold mt-1">Halbrook Pool Co.</div></div>
-              <div><div class="w-5 h-5 rounded-full bg-purple-400 mx-auto"></div><div class="text-[9px] font-bold mt-1">Quillmont Homes</div></div>
-            </div>
-            <div class="mt-3 border-t border-gray-100 pt-2">
-              <div class="flex justify-between text-[8px] text-gray-400"><span>Pool Resurfacing</span><span>$12,800.00</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="mb-6">
-          <div class="flex gap-0.5 mb-2">
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="#eab308"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="#eab308"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="#eab308"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="#eab308"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="#eab308"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-          </div>
-          <p class="text-[14px] font-medium text-black leading-relaxed max-w-[420px]">"I used to design each invoice in Figma. Now I can share a beautiful invoice with one click in Acctual."</p>
-          <p class="text-[13px] text-gray-400 italic mt-1">Harry Rosendoff, Designer</p>
-        </div>
-      </div>
-
-      <!-- Feature 2: Payment link -->
-      <div class="mb-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <h3 class="text-[20px] font-bold text-black leading-snug">Send one payment link that offers every method and lowers your fees</h3>
-          <p class="text-[14px] text-gray-500 leading-relaxed"><strong class="text-black">You don't need to juggle payment platforms.</strong> Our invoices include a secure link that gives your clients the freedom to pay with credit cards, bank transfers (ACH/SEPA) or stablecoins (USDC/USDT). Fees on bank transfers and stablecoins are only 1%.</p>
-        </div>
-        <div class="rounded-2xl overflow-hidden mb-6 h-[300px] bg-gradient-to-br from-amber-900 via-stone-800 to-stone-900 flex items-center justify-center">
-          <div class="bg-white rounded-lg shadow-2xl p-5 w-[280px]">
-            <div class="text-[9px] text-gray-400 uppercase mb-3">Payment Method</div>
-            <div class="flex gap-2 mb-3">
-              <div class="flex-1 border border-gray-200 rounded-md py-2 text-center text-[9px]">
-                <svg class="mx-auto mb-1" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="1.5"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg>
-                Bank
-              </div>
-              <div class="flex-1 border border-gray-200 rounded-md py-2 text-center text-[9px]">
-                <svg class="mx-auto mb-1" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-                Card
-              </div>
-              <div class="flex-1 border border-gray-200 rounded-md py-2 text-center text-[9px]">
-                <svg class="mx-auto mb-1" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M9.5 9.5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5c0 2.5-2.5 2.5-2.5 5M12 19v.01"/></svg>
-                Crypto
-              </div>
-            </div>
-            <div class="text-[8px] text-gray-400">USD</div>
-            <div class="bg-black text-white text-[9px] text-center py-2 rounded-md mt-2">Get paid with Acctual</div>
-          </div>
-        </div>
-        <div class="mb-6">
-          <div class="flex gap-0.5 mb-2">
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="#eab308"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="#eab308"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="#eab308"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="#eab308"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="#eab308"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-          </div>
-          <p class="text-[14px] font-medium text-black leading-relaxed max-w-[420px]">"Our workflow is faster and more accurate thanks to Acctual. Payments are always under one invoice number, even if customers switch from ACH to crypto."</p>
-          <p class="text-[13px] text-gray-400 italic mt-1">Amin Hakim, Operations at Airfoil</p>
-        </div>
-      </div>
-
-      <!-- Feature 3: Same day payouts -->
-      <div class="mb-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <h3 class="text-[20px] font-bold text-black leading-snug">Get same day payouts, sent directly to your bank account or wallet. <span class="text-gray-400">Accepting payments across 14,000+ financial institutions</span></h3>
-          <p class="text-[14px] text-gray-500 leading-relaxed"><strong class="text-black">Don't let banks and accounting platforms hold your money hostage.</strong> We use a non custodial system that converts each payment to your favorite currency and sends it directly to your bank account or wallet.</p>
-        </div>
-        <div class="rounded-2xl overflow-hidden mb-6 h-[300px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center gap-6">
-          <div class="bg-gray-800 rounded-3xl p-4 w-[180px] shadow-2xl border border-gray-700">
-            <div class="text-[8px] text-gray-400 text-center mb-1">Monday, June 6</div>
-            <div class="text-white text-[28px] font-light text-center mb-3">9:41</div>
-            <div class="space-y-2">
-              <div class="bg-gray-700 rounded-lg p-2 flex items-center gap-2"><div class="w-4 h-4 rounded-full bg-red-500"></div><div class="text-[7px] text-gray-300">Bank of America<br>Payment received</div></div>
-              <div class="bg-gray-700 rounded-lg p-2 flex items-center gap-2"><div class="w-4 h-4 rounded-full bg-green-500"></div><div class="text-[7px] text-gray-300">Acctual<br>$1,200 sent to account</div></div>
-            </div>
-          </div>
-          <div class="bg-gray-700 rounded-2xl p-3 w-[140px] h-[200px] shadow-xl border border-gray-600"></div>
-        </div>
-        <div class="mb-6">
-          <div class="flex gap-0.5 mb-2">
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="#eab308"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="#eab308"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="#eab308"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="#eab308"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="#eab308"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-          </div>
-          <p class="text-[14px] font-medium text-black leading-relaxed max-w-[420px]">"I received my money within seven minutes via USDC. Zero hassle. It felt so great."</p>
-          <p class="text-[13px] text-gray-400 italic mt-1">Vadym, Freelancer</p>
-        </div>
-      </div>
-
-      <!-- Feature 4: Automatic nudges -->
-      <div class="mb-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <h3 class="text-[20px] font-bold text-black leading-snug">Chase your payments with automatic nudges, not awkward emails</h3>
-          <p class="text-[14px] text-gray-500 leading-relaxed"><span class="text-gray-400">No one enjoys chasing after payments.</span> <strong class="text-black">We can invoice your clients on a recurring schedule and send gentle reminders if they're late.</strong> You can focus on delivery and get paid faster.</p>
-        </div>
-        <div class="rounded-2xl overflow-hidden mb-6 h-[300px] bg-gradient-to-br from-stone-700 via-stone-800 to-stone-900 flex items-center justify-center gap-4">
-          <div class="bg-white rounded-lg shadow-xl p-4 w-[220px] rotate-[-2deg]">
-            <div class="text-[8px] text-gray-400 mb-2">Email</div>
-            <div class="text-[8px] text-gray-500 mb-1">Reminder: You are a week late for a payment.</div>
-            <div class="bg-blue-50 rounded p-2 mt-2 text-center">
-              <div class="text-[9px] font-medium">Friendly reminder this invoice is 14 days overdue.</div>
-            </div>
-            <div class="mt-3 flex justify-between items-start">
-              <div><div class="w-4 h-4 rounded-full bg-red-400"></div><div class="text-[7px] font-bold mt-0.5">Lisa Desserts</div></div>
-              <div><div class="w-4 h-4 rounded-full bg-purple-400"></div><div class="text-[7px] font-bold mt-0.5">Velmora Events</div></div>
-            </div>
-          </div>
-          <div class="bg-white rounded-lg shadow-xl p-4 w-[200px] rotate-[2deg]">
-            <div class="text-[10px] font-bold mb-2">Recurring Invoice</div>
-            <div class="text-[8px] text-gray-400 mb-1">Every</div>
-            <div class="flex items-center gap-1 text-[9px] mb-2">
-              <span class="border border-gray-200 rounded px-2 py-0.5">1</span>
-              <span class="border border-gray-200 rounded px-2 py-0.5">month</span>
-              <span class="text-gray-400">on</span>
-              <span class="border border-gray-200 rounded px-2 py-0.5">30st</span>
-            </div>
-            <div class="text-[9px] font-medium mb-1">12 invoices</div>
-            <div class="space-y-1">
-              <div class="flex items-center gap-1 text-[8px]"><div class="w-2 h-2 rounded-full bg-blue-500"></div>Mon, Dec 30 2025 <span class="ml-auto text-gray-400">$12,500.00</span></div>
-              <div class="flex items-center gap-1 text-[8px]"><div class="w-2 h-2 rounded-full bg-gray-300"></div>Thu, Jan 30 2026</div>
-            </div>
-          </div>
-        </div>
-        <div class="mb-6">
-          <div class="flex gap-0.5 mb-2">
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="#eab308"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="#eab308"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="#eab308"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="#eab308"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-            <svg width="14" height="14" viewBox="0 0 20 20" fill="#eab308"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78z"/></svg>
-          </div>
-          <p class="text-[14px] font-medium text-black leading-relaxed max-w-[420px]">"It was painful to chase customers and check their payment method. Now I can send one invoice with every option and get paid."</p>
-          <p class="text-[13px] text-gray-400 italic mt-1">Jesse Friedland, Founder of Mano Studios</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sync with QuickBooks and Xero -->
-  <section class="py-12 px-6">
-    <div class="max-w-[800px] mx-auto bg-white rounded-2xl p-10 border border-gray-100">
-      <span class="inline-block bg-green-100 text-green-700 text-[12px] font-medium px-3 py-1 rounded-full mb-4">Sync your contacts and products</span>
-      <h2 class="text-[28px] font-bold text-black leading-snug mb-3">Automatically sync and reconcile each transaction with QuickBooks and Xero</h2>
-      <p class="text-[14px] text-gray-500 leading-relaxed mb-8">Connect your QuickBooks or Xero account to synchronize your contacts and products. When a client pays an invoice, the transaction will appear in your books automatically.</p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="flex items-start gap-3">
-          <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-[14px] flex-shrink-0">X</div>
-          <div>
-            <h3 class="text-[15px] font-bold mb-1">Xero</h3>
-            <p class="text-[13px] text-gray-500">Invoice, payments, contacts, GL category</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-3">
-          <div class="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center text-white font-bold text-[14px] flex-shrink-0">Q</div>
-          <div>
-            <h3 class="text-[15px] font-bold mb-1">Quickbooks</h3>
-            <p class="text-[13px] text-gray-500">Invoice, payments, customers, products/services</p>
+          <div class="bg-navyLight rounded-xl p-5 border border-gray-800 hover:border-accent transition">
+            <h3 class="text-white text-[15px] font-bold mb-2">Travel &amp; Hospitality</h3>
+            <p class="text-gray-400 text-[12px] leading-relaxed">Reinventing guest and customer experiences with AI-driven transformation</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Security Section -->
-  <section class="py-12 px-6 bg-surface">
-    <div class="max-w-[800px] mx-auto">
-      <h2 class="text-[32px] font-bold text-black leading-snug mb-3">Security and compliance in first place</h2>
-      <p class="text-[14px] text-gray-500 mb-8 leading-relaxed">Your security is our priority. We adhere to industry standards when it comes to data encryption, protection and compliance.</p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div>
-          <h3 class="text-[15px] font-bold mb-2">PCI standards</h3>
-          <p class="text-[13px] text-gray-500 leading-relaxed mb-4">We meet PCI compliance and standards to keep your credit cards and bank accounts safe.</p>
-          <div class="bg-blue-50 rounded-2xl h-40 flex items-center justify-center">
-            <div class="w-20 h-20 rounded-full bg-blue-400 flex items-center justify-center text-white font-bold text-[22px] shadow-lg">PCI</div>
+  <!-- Latest Highlights -->
+  <section class="py-16 bg-navy">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <p class="text-[12px] uppercase tracking-[3px] text-gray-400 text-center mb-4">Latest Highlights</p>
+      <h2 class="text-[36px] font-bold text-white text-center mb-12">Insights &amp; Expertise</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <div class="bg-navyLight rounded-2xl overflow-hidden border border-gray-800 hover:border-accent transition">
+          <div class="h-[180px] bg-gradient-to-br from-purple-800 to-blue-900 flex items-center justify-center p-6">
+            <div class="text-center">
+              <span class="text-white text-[18px] font-bold">bounteous</span>
+              <div class="text-gray-400 text-[14px] mt-1">+ Cartesian</div>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="text-gray-500 text-[12px]">Press Release</span>
+            <h3 class="text-white text-[15px] font-bold mt-2 leading-snug">Bounteous Acquires Cartesian, Enhancing Deep Data and Analytics Capabilities to Accelerate Enterprise AI</h3>
+            <a href="#" class="text-gray-400 text-[13px] mt-3 inline-block hover:text-white">Read more &rarr;</a>
           </div>
         </div>
-        <div>
-          <h3 class="text-[15px] font-bold mb-2">SSL encryption &amp; tokenization</h3>
-          <p class="text-[13px] text-gray-500 leading-relaxed mb-4">We use industry protocols to tokenize your data and keep it encrypted. For your protection.</p>
-          <div class="bg-purple-50 rounded-2xl h-40 flex items-center justify-center">
-            <div class="w-20 h-20 rounded-full bg-purple-400 flex items-center justify-center text-white font-bold text-[22px] shadow-lg">SSL</div>
+        <div class="bg-navyLight rounded-2xl overflow-hidden border border-gray-800 hover:border-accent transition">
+          <div class="h-[180px] bg-gradient-to-br from-indigo-800 to-purple-900 flex items-center justify-center p-6">
+            <div class="text-center">
+              <span class="text-accentLight text-[16px] font-medium">2025 Vendor of the Year</span>
+              <div class="text-white text-[14px] mt-2 font-bold">Texas Roadhouse</div>
+            </div>
           </div>
+          <div class="p-5">
+            <span class="text-gray-500 text-[12px]">Press Release</span>
+            <h3 class="text-white text-[15px] font-bold mt-2 leading-snug">Bounteous Named 2025 Texas Roadhouse Vendor of the Year</h3>
+            <a href="#" class="text-gray-400 text-[13px] mt-3 inline-block hover:text-white">Read more &rarr;</a>
+          </div>
+        </div>
+        <div class="bg-navyLight rounded-2xl overflow-hidden border border-gray-800 hover:border-accent transition">
+          <div class="h-[180px] bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center p-6">
+            <div class="text-center">
+              <svg class="mx-auto mb-2" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#8ee7ff" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <span class="text-gray-300 text-[13px]">Claude Code Workshop</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="text-gray-500 text-[12px]">Press Release</span>
+            <h3 class="text-white text-[15px] font-bold mt-2 leading-snug">Bounteous Launches Claude Code Workshop Series</h3>
+            <a href="#" class="text-gray-400 text-[13px] mt-3 inline-block hover:text-white">Read more &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="#" class="inline-block border border-gray-600 text-gray-300 px-6 py-2.5 rounded-full text-[14px] font-medium hover:bg-white hover:text-navy transition">View more perspectives</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <section class="py-16 bg-navy">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div>
+          <p class="text-[12px] uppercase tracking-[3px] text-gray-400 mb-4">Partners</p>
+          <h2 class="text-[36px] font-light text-white leading-snug mb-4">Our Partnerships Accelerate <span class="text-accent font-medium">Innovation</span></h2>
+          <p class="text-gray-400 text-[15px] leading-relaxed mb-6">Platform and cloud partnerships are the foundation for agentic engineering and human experience at enterprise scale, turning platform investments into measurable business outcomes.</p>
+          <a href="#" class="inline-block bg-accent text-white px-6 py-2.5 rounded-full text-[14px] font-medium hover:bg-purple-700 transition">Meet our partners</a>
+        </div>
+        <div class="grid grid-cols-3 gap-x-10 gap-y-8 items-center">
+          <span class="text-white text-[18px] font-bold">Adobe</span>
+          <span class="text-white text-[16px] font-medium">databricks</span>
+          <span class="text-white text-[20px] font-medium">Google</span>
+          <span class="text-white text-[18px] font-bold">aws</span>
+          <span class="text-white text-[15px] font-semibold tracking-wider">ANTHROPIC</span>
+          <span class="text-white text-[16px] font-medium italic">salesforce</span>
+          <span class="text-white text-[16px] font-medium">Microsoft</span>
+          <span class="text-white text-[18px] font-bold tracking-wide">ACQUIA</span>
+          <span class="text-white text-[14px] font-medium">snowflake</span>
+          <span class="text-white text-[18px] font-bold">olo</span>
+          <span class="text-white text-[16px] font-bold">MUREX</span>
+          <span class="text-white text-[15px] font-medium">bloomreach</span>
+          <span class="text-white text-[18px] font-medium">Drupal</span>
+          <span class="text-white text-[16px] font-medium">n8n</span>
+          <span class="text-white text-[16px] font-medium italic">crewai</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="py-12 px-6">
-    <div class="max-w-[800px] mx-auto text-center">
-      <h2 class="text-[32px] font-bold text-black leading-snug mb-3">Send an invoice that gets<br>you paid faster</h2>
-      <p class="text-[14px] text-gray-500 mb-6 leading-relaxed">Share a stunning invoice with lower fees. Send your payout<br>straight to your bank account or wallet.</p>
-      <a href="#" class="inline-block bg-black text-white px-5 py-2.5 rounded-lg text-[13px] font-medium hover:bg-gray-800 mb-10">Create an invoice</a>
-      <div class="rounded-2xl overflow-hidden h-[300px] bg-gradient-to-br from-green-400 via-green-500 to-yellow-400 flex items-center justify-center">
-        <div class="bg-white rounded-lg shadow-2xl p-5 w-[260px] rotate-[3deg]">
-          <div class="flex justify-between items-start">
-            <div><div class="text-[8px] font-bold">Adria Studio</div><div class="text-[6px] text-gray-400">info@adria.studio</div></div>
-            <div><div class="w-5 h-5 rounded-full bg-green-500"></div><div class="text-[8px] font-bold mt-0.5">Spotify</div></div>
-          </div>
-          <div class="mt-3 border-t border-gray-100 pt-2 space-y-1">
-            <div class="flex justify-between text-[7px]"><span class="text-gray-400">Design Services</span><span>$20,000</span></div>
-            <div class="flex justify-between text-[7px]"><span class="text-gray-400">Subtotal</span><span>$20,000</span></div>
-            <div class="flex justify-between text-[8px] font-bold border-t border-gray-100 pt-1"><span>Total</span><span>$22,000.00</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQs -->
-  <section class="py-16 px-6">
-    <div class="max-w-[800px] mx-auto">
-      <h2 class="text-[32px] font-bold text-black mb-8">FAQs</h2>
-      <div class="divide-y divide-gray-200">
-        <details class="py-4 group">
-          <summary class="flex items-center justify-between cursor-pointer text-[14px] font-medium text-accent hover:text-blue-700">
-            Is Acctual really free invoicing software?
-            <span class="text-[20px] text-gray-400 group-open:rotate-45 transition-transform">+</span>
-          </summary>
-        </details>
-        <details class="py-4 group">
-          <summary class="flex items-center justify-between cursor-pointer text-[14px] font-medium text-accent hover:text-blue-700">
-            How does Acctual compare to FreshBooks or Stripe on cost?
-            <span class="text-[20px] text-gray-400 group-open:rotate-45 transition-transform">+</span>
-          </summary>
-        </details>
-        <details class="py-4 group">
-          <summary class="flex items-center justify-between cursor-pointer text-[14px] font-medium text-accent hover:text-blue-700">
-            Will my clients take an invoice from a tool they haven't used before?
-            <span class="text-[20px] text-gray-400 group-open:rotate-45 transition-transform">+</span>
-          </summary>
-        </details>
-        <details class="py-4 group">
-          <summary class="flex items-center justify-between cursor-pointer text-[14px] font-medium text-accent hover:text-blue-700">
-            How does the payment link work?
-            <span class="text-[20px] text-gray-400 group-open:rotate-45 transition-transform">+</span>
-          </summary>
-        </details>
-        <details class="py-4 group">
-          <summary class="flex items-center justify-between cursor-pointer text-[14px] font-medium text-accent hover:text-blue-700">
-            What payment methods can my clients use?
-            <span class="text-[20px] text-gray-400 group-open:rotate-45 transition-transform">+</span>
-          </summary>
-        </details>
-        <details class="py-4 group">
-          <summary class="flex items-center justify-between cursor-pointer text-[14px] font-medium text-accent hover:text-blue-700">
-            How fast do I get paid?
-            <span class="text-[20px] text-gray-400 group-open:rotate-45 transition-transform">+</span>
-          </summary>
-        </details>
-        <details class="py-4 group">
-          <summary class="flex items-center justify-between cursor-pointer text-[14px] font-medium text-accent hover:text-blue-700">
-            Does Acctual work with QuickBooks or Xero?
-            <span class="text-[20px] text-gray-400 group-open:rotate-45 transition-transform">+</span>
-          </summary>
-        </details>
-        <details class="py-4 group">
-          <summary class="flex items-center justify-between cursor-pointer text-[14px] font-medium text-accent hover:text-blue-700">
-            How many invoices can I send?
-            <span class="text-[20px] text-gray-400 group-open:rotate-45 transition-transform">+</span>
-          </summary>
-        </details>
-        <details class="py-4 group">
-          <summary class="flex items-center justify-between cursor-pointer text-[14px] font-medium text-accent hover:text-blue-700">
-            Is Acctual suitable for international clients?
-            <span class="text-[20px] text-gray-400 group-open:rotate-45 transition-transform">+</span>
-          </summary>
-        </details>
-        <details class="py-4 group">
-          <summary class="flex items-center justify-between cursor-pointer text-[14px] font-medium text-accent hover:text-blue-700">
-            Who is Acctual actually built for?
-            <span class="text-[20px] text-gray-400 group-open:rotate-45 transition-transform">+</span>
-          </summary>
-        </details>
-        <details class="py-4 group">
-          <summary class="flex items-center justify-between cursor-pointer text-[14px] font-medium text-accent hover:text-blue-700">
-            Can I make the invoice look like my brand?
-            <span class="text-[20px] text-gray-400 group-open:rotate-45 transition-transform">+</span>
-          </summary>
-        </details>
-        <details class="py-4 group">
-          <summary class="flex items-center justify-between cursor-pointer text-[14px] font-medium text-accent hover:text-blue-700">
-            Do I need accounting experience to use this?
-            <span class="text-[20px] text-gray-400 group-open:rotate-45 transition-transform">+</span>
-          </summary>
-        </details>
+  <section class="py-20 bg-gradient-to-br from-navy via-blue-900/40 to-navy">
+    <div class="max-w-[1100px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="h-[320px] bg-gradient-to-br from-blue-900 to-cyan-900 rounded-2xl"></div>
+      <div>
+        <p class="text-[12px] uppercase tracking-[3px] text-gray-400 mb-4">Get In Touch</p>
+        <h2 class="text-[36px] font-light text-white leading-snug">Let's discuss how Bounteous can help your organization turn <span class="text-accent font-medium">AI into business outcomes</span></h2>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-surface py-16 px-6">
-    <div class="max-w-[1000px] mx-auto grid grid-cols-1 md:grid-cols-5 gap-10">
-      <div class="md:col-span-2">
-        <div class="flex items-center gap-1.5 font-bold text-[18px] text-black tracking-tight mb-4">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 12h16M12 4v16M7 7l10 10M17 7L7 17"/></svg>
-          Acctual
-        </div>
-        <p class="text-[14px] text-gray-600 leading-relaxed mb-6">Create the world's most<br>flexible invoice in seconds</p>
-        <a href="#" class="inline-block bg-green-600 text-white px-5 py-2.5 rounded-lg text-[13px] font-medium hover:bg-green-700">Create an invoice</a>
-        <p class="text-[13px] text-gray-400 mt-8">With &#9829; from NYC</p>
-      </div>
+  <footer class="bg-navy pt-16 pb-8 px-6 border-t border-gray-800">
+    <div class="max-w-[1100px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
       <div>
-        <h4 class="text-[14px] font-bold text-black mb-4">Company</h4>
-        <ul class="space-y-2 text-[13px] text-gray-500">
-          <li><a href="#" class="hover:text-black">Blog</a></li>
-          <li><a href="#" class="hover:text-black">Guides</a></li>
-          <li><a href="#" class="hover:text-black">Privacy</a></li>
-          <li><a href="#" class="hover:text-black">Terms</a></li>
-          <li><a href="#" class="hover:text-black">Contact</a></li>
+        <h4 class="text-[14px] font-bold text-white mb-4">What We Do</h4>
+        <ul class="space-y-2 text-[13px] text-gray-400">
+          <li><a href="#" class="hover:text-white">Expertise</a></li>
+          <li><a href="#" class="hover:text-white">Partners</a></li>
+          <li><a href="#" class="hover:text-white">Bounteous Arc</a></li>
+        </ul>
+        <h4 class="text-[14px] font-bold text-white mt-6 mb-4">Who We Are</h4>
+        <ul class="space-y-2 text-[13px] text-gray-400">
+          <li><a href="#" class="hover:text-white">About Us</a></li>
+          <li><a href="#" class="hover:text-white">Careers</a></li>
+        </ul>
+        <h4 class="text-[14px] font-bold text-white mt-6 mb-4">Our Work</h4>
+        <ul class="space-y-2 text-[13px] text-gray-400">
+          <li><a href="#" class="hover:text-white">Case Studies</a></li>
+          <li><a href="#" class="hover:text-white">Co-Innovation</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="text-[14px] font-bold text-black mb-4">Guides</h4>
-        <ul class="space-y-2 text-[13px] text-gray-500">
-          <li><a href="#" class="hover:text-black">Agency invoicing</a></li>
-          <li><a href="#" class="hover:text-black">Freelancer invoicing</a></li>
-          <li><a href="#" class="hover:text-black">Video production invoicing</a></li>
-          <li><a href="#" class="hover:text-black">Graphic design invoicing</a></li>
-          <li><a href="#" class="hover:text-black">Web design invoicing</a></li>
-          <li><a href="#" class="hover:text-black">Recurring invoicing</a></li>
-          <li><a href="#" class="hover:text-black">FreshBooks alternative</a></li>
-          <li><a href="#" class="hover:text-black">PayPal invoice fees</a></li>
-          <li><a href="#" class="hover:text-black">Upwork alternatives</a></li>
-          <li><a href="#" class="hover:text-black">Consulting taxes</a></li>
-          <li><a href="#" class="hover:text-black">Past due vs overdue</a></li>
+        <h4 class="text-[14px] font-bold text-white mb-4">Solutions</h4>
+        <ul class="space-y-2 text-[13px] text-gray-400">
+          <li><a href="#" class="hover:text-white">Intelligent Product Engineering</a></li>
+          <li><a href="#" class="hover:text-white">AI-Enhanced Experience Transformation</a></li>
+          <li><a href="#" class="hover:text-white">Modern Business Platforms</a></li>
+          <li><a href="#" class="hover:text-white">Agentic Business Reinvention</a></li>
+        </ul>
+        <h4 class="text-[14px] font-bold text-white mt-6 mb-4">Thought Leadership</h4>
+        <ul class="space-y-2 text-[13px] text-gray-400">
+          <li><a href="#" class="hover:text-white">News &amp; Insights</a></li>
+          <li><a href="#" class="hover:text-white">Events &amp; Webinars</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="text-[14px] font-bold text-black mb-4">Send Money</h4>
-        <ul class="space-y-2 text-[13px] text-gray-500">
-          <li><a href="#" class="hover:text-black">Send money to UK from US</a></li>
-          <li><a href="#" class="hover:text-black">Send money to US from UK</a></li>
-          <li><a href="#" class="hover:text-black">Send money to US from Germany</a></li>
-          <li><a href="#" class="hover:text-black">Send money to Germany from US</a></li>
-          <li><a href="#" class="hover:text-black">Send money to US from Canada</a></li>
-          <li><a href="#" class="hover:text-black">Send money to Canada from US</a></li>
-          <li><a href="#" class="hover:text-black">Send money to Australia from US</a></li>
-          <li><a href="#" class="hover:text-black">Send money to US from Australia</a></li>
+        <h4 class="text-[14px] font-bold text-white mb-4">Industries We Serve</h4>
+        <ul class="space-y-2 text-[13px] text-gray-400">
+          <li><a href="#" class="hover:text-white">Consumer Goods</a></li>
+          <li><a href="#" class="hover:text-white">Financial Services</a></li>
+          <li><a href="#" class="hover:text-white">Healthcare</a></li>
+          <li><a href="#" class="hover:text-white">Industrial, Manufacturing, &amp; Logistics</a></li>
+          <li><a href="#" class="hover:text-white">Media, Entertainment, Technology</a></li>
+          <li><a href="#" class="hover:text-white">Retail</a></li>
+          <li><a href="#" class="hover:text-white">Telecommunications</a></li>
+          <li><a href="#" class="hover:text-white">Travel, Hospitality, &amp; Restaurant</a></li>
         </ul>
+      </div>
+      <div>
+        <h4 class="text-[14px] font-bold text-white mb-4">Services</h4>
+        <ul class="space-y-2 text-[13px] text-gray-400">
+          <li><a href="#" class="hover:text-white">Artificial Intelligence</a></li>
+          <li><a href="#" class="hover:text-white">Data &amp; Analytics</a></li>
+          <li><a href="#" class="hover:text-white">Experience Innovation &amp; Design</a></li>
+          <li><a href="#" class="hover:text-white">Digital Product &amp; Platform Engineering</a></li>
+          <li><a href="#" class="hover:text-white">Enterprise Digital Transformation</a></li>
+          <li><a href="#" class="hover:text-white">Cloud Enablement &amp; Modernization</a></li>
+          <li><a href="#" class="hover:text-white">Marketing Activation &amp; Loyalty</a></li>
+          <li><a href="#" class="hover:text-white">Digital Commerce</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-[14px] font-bold text-white mb-4">Global Locations</h4>
+        <ul class="space-y-2 text-[13px] text-gray-400">
+          <li>United States</li>
+          <li>Europe</li>
+          <li>Canada</li>
+          <li>India</li>
+          <li>Mexico</li>
+          <li>Singapore</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer bottom -->
+    <div class="max-w-[1100px] mx-auto border-t border-gray-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-6">
+        <span class="text-white font-bold text-[18px]">bounteous</span>
+        <span class="text-gray-500 text-[12px]">PHONE: (877) 220-5862</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <!-- Social icons -->
+        <a href="#" class="text-gray-400 hover:text-white">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-white">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-white">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+        </a>
+      </div>
+      <div class="flex items-center gap-4 text-[12px] text-gray-500">
+        <span>&copy; 2026 Bounteous</span>
+        <a href="#" class="hover:text-white">Legal Notices</a>
+        <a href="#" class="hover:text-white">Newsroom</a>
+        <a href="#" class="hover:text-white">Privacy</a>
+        <a href="#" class="hover:text-white">Accessibility</a>
       </div>
     </div>
   </footer>
-
-  <!-- Bottom Invoice Cards -->
-  <section class="py-16 px-6 bg-white">
-    <div class="max-w-[1000px] mx-auto flex items-start justify-center gap-0">
-      <!-- Invoice card 1 (small, behind left) -->
-      <div class="bg-white rounded-xl shadow-lg p-5 w-[280px] border border-gray-100 mt-8 relative z-0 opacity-80 -mr-8">
-        <div class="text-[9px] text-gray-400 uppercase tracking-wider">Invoice No</div>
-        <div class="text-[13px] font-bold mb-3">0001</div>
-        <div class="text-[9px] text-gray-400 uppercase tracking-wider mb-1">From</div>
-        <div class="w-6 h-6 rounded-full bg-blue-400 mb-1"></div>
-        <div class="text-[12px] font-bold">Marble Studio</div>
-        <div class="text-[10px] text-gray-400 mb-3">billing@marble.studio</div>
-        <div class="text-[9px] text-gray-400 uppercase tracking-wider">Amount</div>
-        <div class="text-[16px] font-bold">$20,800.00</div>
-        <div class="text-[10px] text-gray-400">Due by May 15, 2026</div>
-        <div class="text-[9px] text-gray-400 uppercase tracking-wider mt-3">Payment Method</div>
-      </div>
-      <!-- Invoice card 2 (main, front) -->
-      <div class="bg-white rounded-xl shadow-2xl p-6 w-[340px] border border-gray-100 relative z-10">
-        <div class="flex items-center justify-between mb-3">
-          <div>
-            <div class="text-[9px] text-gray-400 uppercase tracking-wider">Invoice No</div>
-            <div class="text-[14px] font-bold">0001</div>
-          </div>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg>
-        </div>
-        <div class="grid grid-cols-2 gap-3 mb-4">
-          <div>
-            <div class="text-[9px] text-gray-400 uppercase tracking-wider mb-1">From</div>
-            <div class="w-7 h-7 rounded-full bg-blue-500 mb-1"></div>
-            <div class="text-[13px] font-bold">Marble Studio</div>
-            <div class="text-[10px] text-gray-400">billing@marble.studio</div>
-          </div>
-          <div>
-            <div class="text-[9px] text-gray-400 uppercase tracking-wider mb-1">To</div>
-            <div class="w-7 h-7 rounded-full bg-green-400 flex items-center justify-center text-white text-[12px] mb-1">+</div>
-            <div class="text-[13px] font-bold">Charm AI</div>
-            <div class="text-[10px] text-gray-400">billing@charm.ai</div>
-          </div>
-        </div>
-        <div class="border-t border-gray-100 pt-3 mb-4">
-          <div class="text-[9px] text-gray-400 uppercase tracking-wider">Amount</div>
-          <div class="text-[18px] font-bold">$20,800.00</div>
-          <div class="text-[10px] text-gray-400">Due by May 15, 2026</div>
-        </div>
-        <div class="text-[9px] text-gray-400 uppercase tracking-wider mb-2">Payment Method</div>
-        <div class="flex gap-2">
-          <div class="flex-1 border border-gray-200 rounded-lg py-2 px-3 text-center">
-            <svg class="mx-auto mb-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg>
-            <div class="text-[11px]">Bank</div>
-          </div>
-          <div class="flex-1 border border-gray-200 rounded-lg py-2 px-3 text-center">
-            <svg class="mx-auto mb-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-            <div class="text-[11px]">Card</div>
-          </div>
-          <div class="flex-1 border border-gray-200 rounded-lg py-2 px-3 text-center">
-            <svg class="mx-auto mb-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
-            <div class="text-[11px]">Crypto</div>
-          </div>
-        </div>
-      </div>
-      <!-- Invoice card 3 (small, behind right) -->
-      <div class="bg-white rounded-xl shadow-lg p-5 w-[280px] border border-gray-100 mt-8 relative z-0 opacity-80 -ml-8">
-        <div class="flex justify-end mb-2">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg>
-        </div>
-        <div class="text-[9px] text-gray-400 uppercase tracking-wider mb-1">To</div>
-        <div class="w-6 h-6 rounded-full bg-green-400 flex items-center justify-center text-white text-[10px] mb-1">+</div>
-        <div class="text-[12px] font-bold">Charm AI</div>
-        <div class="text-[10px] text-gray-400">billing@charm.ai</div>
-      </div>
-    </div>
-  </section>
 
 </body>
 </html>
